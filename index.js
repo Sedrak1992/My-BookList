@@ -1,9 +1,3 @@
-
-const delete1 =  document.querySelector(".delete");
-
-// delete1.addEventListener("click",deleteBook);
-
-
 class Book {
   constructor(title, author, isbn) {
     this.title = title;
@@ -17,9 +11,6 @@ class UI {
 
     books.forEach((book) => UI.addBookToList(book));
   }
-
-
-
   static addBookToList(book) {
     const list = document.querySelector("#book-list");
 
