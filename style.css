@@ -1,0 +1,82 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+span{
+  color: rgb(145, 159, 200);
+}
+i{
+  color:  rgb(113, 113, 213);
+}
+.inputSubmit {
+  background-color: rgb(113, 113, 213);
+  margin-top: 30px;
+  border: 0;
+  cursor: pointer;
+  padding: 15px;
+  color: #fff;
+  font-size: 17px;
+}
+a {
+  text-decoration: none;
+  background: red;
+  padding: 7px;
+  color: #fff;
+}
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+input {
+  width: 100%;
+  padding: 10px;
+}
+h1 {
+  text-align: center;
+  font-weight: 100;
+  margin: 20px 40px;
+}
+h2 {
+  margin: 15px 0 10px;
+}
+table {
+  width: 100%;
+  margin-top: 30px;
+  box-shadow: -1px 12px 12px -6px rgba(0,0,0,0.5);
+}
+td {
+  padding: 20px 0;
+}
+.trColor {
+  font-weight: 700;
+}
+.trBorder:nth-child(1) {
+  border-bottom: 1px solid lightgray;
+  border-top: 1px solid lightgray;
+}
+table,
+td,
+th {
+  padding: 20px;
+  border-collapse: collapse;
+  text-align: center;
+}
+tr:nth-child(odd) {
+  background-color: #fff;
+}
+tr:nth-child(odd):hover {
+  background-color: dodgerblue;
+  color: white;
+  transform: scale(1.1);
+  transition: transform 300ms ease-in;
+}
+tr:nth-child(even) {
+  background-color: #ededed;
+}
+tr:nth-child(even):hover {
+  background-color: lightgray;
+  transform: scale(1.1);
+  transition: transform 300ms ease-in;
+}
