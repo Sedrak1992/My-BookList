@@ -66,7 +66,7 @@ th {
 tr:nth-child(odd) {
   background-color: #fff;
 }
-tr:nth-child(odd):hover {
+#book-list tr:nth-child(odd):hover {
   background-color: dodgerblue;
   color: white;
   transform: scale(1.1);
