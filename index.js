@@ -64,6 +64,7 @@ class Store {
     localStorage.setItem("books", JSON.stringify(books));
   }
 }
+
 document.addEventListener("DOMContentLoaded", UI.displayBooks);
 document.querySelector("#book-form").addEventListener("submit", (e) => {
   e.preventDefault();
@@ -72,7 +73,7 @@ document.querySelector("#book-form").addEventListener("submit", (e) => {
   const isbn = document.querySelector("#isbn").value;
 
   if (title === "" || author === "" || isbn === "") {
-    alert("Fill in all input fields")
+    alert("Fill in all input fields");
   } else {
     const book = new Book(title, author, isbn);
     UI.addBookToList(book);
