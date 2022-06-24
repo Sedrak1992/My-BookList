@@ -67,7 +67,7 @@ tr:nth-child(odd) {
   background-color: #fff;
 }
 #book-list tr:nth-child(odd):hover {
-  background-color: dodgerblue;
+  background-color: rgb(170, 192, 214);
   color: white;
   transform: scale(1.1);
   transition: transform 300ms ease-in;
