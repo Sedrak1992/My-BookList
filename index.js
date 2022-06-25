@@ -21,7 +21,7 @@ const render = () => {
   <td>${item.title}</td>
   <td>${item.author}</td>
   <td>${item.isbn}</td>
-  <td><a href="#"class="delete" onclick="removeItem(${i})"> X </a></td>
+  <td> <a href="#" onclick="openModal(${i})"><i class="fa-solid fa-pen-to-square"></i></a>  <a href="#"class="delete"  onclick="removeItem(${i})"> X </a></td>
   `;
     bookList.appendChild(tr);
   });
@@ -44,5 +44,35 @@ addBook.addEventListener("click", function (e) {
     localStorage.setItem("items", JSON.stringify(list));
   }
 });
-
 render();
+const modal = document.querySelector(".modal");
+const deleteBtn = document.querySelector("#delete");
+const inputTitle = document.querySelector("#inputTitle");
+const inputAuthor = document.querySelector("#inputAuthor");
+const inputISBN = document.querySelector("#inputISBN");
+const buttonSave = document.querySelector(".buttonSave");
+let selected;
+
+function openModal(index){
+  selected = index;
+  inputTitle.value = list[index].title;
+  inputAuthor.value = list[index].author;
+  inputISBN.value = list[index].isbn;
+  modal.classList.toggle("modal_close");
+}
+
+buttonSave.addEventListener("click", () => {
+  let item = {
+    title: inputTitle.value,
+    author: inputAuthor.value,
+    isbn: inputISBN.value,
+  };
+
+  list[selected] = item;
+  localStorage.setItem("items",JSON.stringify(list));
+  render();
+  modal.classList.toggle("modal_close");
+});
+deleteBtn.addEventListener("click", () => {
+  modal.classList.toggle("modal_close");
+});
