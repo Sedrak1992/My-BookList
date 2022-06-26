@@ -2,13 +2,14 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-span{
+span {
   color: rgb(145, 159, 200);
 }
-i{
-  color:  rgb(113, 113, 213);
+i {
+  color: rgb(113, 113, 213);
 }
 .inputSubmit {
   background-color: rgb(113, 113, 213);
@@ -21,9 +22,10 @@ i{
 }
 .delete {
   text-decoration: none;
-  background: red;
-  padding: 7px;
-  color: #fff;
+  margin-left: 10px;
+}
+.delete i {
+  color: red;
 }
 .container {
   width: 80%;
@@ -31,20 +33,20 @@ i{
 }
 input {
   width: 100%;
-  padding: 10px;
+  padding: 8px;
 }
 h1 {
   text-align: center;
   font-weight: 100;
-  margin: 20px 40px;
+  margin: 10px;
 }
 h2 {
-  margin: 15px 0 10px;
+  margin: 8px 0;
 }
 table {
   width: 100%;
   margin-top: 30px;
-  box-shadow: -1px 12px 12px -6px rgba(0,0,0,0.5);
+  box-shadow: -1px 12px 12px -6px rgba(0, 0, 0, 0.5);
 }
 td {
   padding: 20px 0;
@@ -59,7 +61,7 @@ td {
 table,
 td,
 th {
-  padding: 20px;
+  padding: 14px;
   border-collapse: collapse;
   text-align: center;
 }
@@ -80,24 +82,55 @@ tr:nth-child(even):hover {
   transform: scale(1.1);
   transition: transform 300ms ease-in;
 }
-.modal{
+.modal {
+  padding: 10px;
   width: 400px;
-  height: 300px;
   background-color: aquamarine;
   margin: 0 auto;
   border: 1px solid gold;
   position: absolute;
+  border-radius: 10px;
   top: calc(50vh - 150px);
   left: calc(50% - 200px);
+  box-shadow: -1px 12px 12px 100vh rgba(0, 0, 0, 0.5);
 }
 .modal input {
   padding: 10px;
-  margin:  0 auto;
+  border-radius: 10px;
 }
 .modal h2 {
   text-align: center;
   color: #767676;
+  padding-bottom: 20px;
 }
 .modal_close {
   display: none;
+}
+#inputAuthor {
+  margin: 20px 0;
+}
+.aikanka {
+  text-decoration: none;
+  margin-right: 10px;
+}
+.modelButton  i{
+  font-size: 30px;
+  cursor: pointer;
+}
+.modelButton{
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+}
+.modelButton > div{
+  padding: 7px 20px;
+}
+.cursor{
+  cursor: pointer;
+}
+#delete{
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  right: 8px;
 }

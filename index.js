@@ -10,18 +10,50 @@ let list = stringList === null ? [] : JSON.parse(stringList);
 
 function removeItem(index) {
   list = list.filter((item, i) => i !== index);
+  // console.log(index)
   localStorage.setItem("items", JSON.stringify(list));
   render();
 }
+
+const reorder = (list, startIndex, endIndex) => {
+  const result = Array.from(list);
+  const [removed] = result.splice(startIndex, 1);
+  result.splice(endIndex, 0, removed);
+  return result;
+};
 const render = () => {
+  let startIndex;
   bookList.innerHTML = "";
   list.forEach((item, i) => {
     const tr = document.createElement("tr");
+    tr.draggable = true;
+    tr.className = "cursor"
+    tr.ondragstart = () => {
+      startIndex = i;
+    };
+    tr.ondrop = () => {
+      let newList = reorder(list, startIndex, i);
+      console.log(newList);
+      list = newList;
+      render();
+      localStorage.setItem("items", JSON.stringify(newList));
+    };
+    tr.ondragover = (event) => {
+      event.preventDefault();
+    };
     tr.innerHTML = `
-  <td>${item.title}</td>
+   <td>${i + 1}</td> 
+  <td>${item.title} </td>
   <td>${item.author}</td>
   <td>${item.isbn}</td>
-  <td> <a href="#" onclick="openModal(${i})"><i class="fa-solid fa-pen-to-square"></i></a>  <a href="#"class="delete"  onclick="removeItem(${i})"> X </a></td>
+  <td> 
+    <a href="#" onclick="openModal(${i})" class="aikanka">
+      <i class="fa-solid fa-pen-to-square"></i>
+    </a>  
+    <a href="#"class="delete"onclick="removeItem(${i})">
+    <i class="fa-solid fa-trash-can"></i>
+    </a>
+  </td>
   `;
     bookList.appendChild(tr);
   });
@@ -53,7 +85,7 @@ const inputISBN = document.querySelector("#inputISBN");
 const buttonSave = document.querySelector(".buttonSave");
 let selected;
 
-function openModal(index){
+function openModal(index) {
   selected = index;
   inputTitle.value = list[index].title;
   inputAuthor.value = list[index].author;
@@ -67,11 +99,18 @@ buttonSave.addEventListener("click", () => {
     author: inputAuthor.value,
     isbn: inputISBN.value,
   };
-
-  list[selected] = item;
-  localStorage.setItem("items",JSON.stringify(list));
-  render();
-  modal.classList.toggle("modal_close");
+  if (
+    inputTitle.value === "" ||
+    inputAuthor.value === "" ||
+    inputISBN.value === ""
+  ) {
+    alert("lracreq bolor dashter@ ");
+  } else {
+    list[selected] = item;
+    localStorage.setItem("items", JSON.stringify(list));
+    render();
+    modal.classList.toggle("modal_close");
+  }
 });
 deleteBtn.addEventListener("click", () => {
   modal.classList.toggle("modal_close");

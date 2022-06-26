@@ -28,6 +28,7 @@
       <table>
         <thead class="trBorder">
           <tr class="trColor">
+            <th></th>
             <th>Title</th>
             <th>Author</th>
             <th>ISBN#</th>
@@ -37,16 +38,22 @@
         <tbody id="book-list"></tbody>
       </table>
     </div>
-      <div class="modal modal_close">
-        <h2>Modal</h2>
-        <form>
-          <input type="text" placeholder="Title"  id="inputTitle"/>
-          <input type="text" placeholder="Author" id="inputAuthor" />
-          <input type="text" placeholder="ISBN#"  id="inputISBN"/>
-          <button class="buttonSave"> Save </button>
-          <button id="delete">- X -</button>
-        </form>
-      </div>
+    <div class="modal modal_close">
+      <h2>Modal</h2>
+      <form>
+        <input type="text" placeholder="Title" id="inputTitle" />
+        <input type="text" placeholder="Author" id="inputAuthor" />
+        <input type="text" placeholder="ISBN#" id="inputISBN" />
+        <div class="modelButton">
+          <div class="buttonSave">
+            <i class="fa-solid fa-bookmark"></i>
+          </div>
+        </div>
+        <div id="delete">
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </form>
+    </div>
     <script
       src="https://kit.fontawesome.com/acfbeeaf99.js"
       crossorigin="anonymous"
